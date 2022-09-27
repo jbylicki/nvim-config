@@ -4,14 +4,12 @@ if not status_ok then
 end
 
 local servers = {
-  "sumneko_lua",
-  "cssls",
-  "html",
-  "tsserver",
-  "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
+  "arduino_language_server",
+  "cmake",
+  "clangd",
+  "jedi_language_server", 
+  "sumneko_lua", 
+  "texlab", 
 }
 
 lsp_installer.setup()
