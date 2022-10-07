@@ -64,6 +64,12 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+keymap("n", "<leader>gs",":Gitsigns stage_hunk<CR>", opts)
+keymap("n", "<leader>gus",":Gitsigns undo_stage_hunk<CR>", opts)
+keymap("n", "<leader>gp",":Gitsigns preview_hunk<CR>", opts)
+keymap("n", "<leader>gb",":Gitsigns blame_line<CR>", opts)
+
+
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
