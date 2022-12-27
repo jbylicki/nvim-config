@@ -60,6 +60,7 @@ return packer.startup(function(use)
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
+  use { "Shatur/neovim-ayu", commit = "0198dcf2d5585742220e21e002f095464874e19e"}
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
@@ -89,7 +90,7 @@ return packer.startup(function(use)
   }
 
   -- Git
-  use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
+  use { "lewis6991/gitsigns.nvim", commit = "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a" }
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
@@ -109,6 +110,23 @@ return packer.startup(function(use)
       }
     end
   }
+use {
+  "zbirenbaum/copilot.lua",
+  event = "VimEnter",
+  config = function()
+    vim.defer_fn(function()
+      require('copilot').setup()
+    end, 100)
+  end,
+}
+
+use {
+  "zbirenbaum/copilot-cmp",
+  after = { "copilot.lua" },
+  config = function ()
+    require("copilot_cmp").setup()
+  end
+}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

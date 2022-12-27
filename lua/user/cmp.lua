@@ -103,11 +103,13 @@ cmp.setup({
 				buffer = "",
 				path = "",
 				emoji = "",
+        copilot = ""
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
+    { name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
